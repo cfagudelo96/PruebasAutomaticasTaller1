@@ -25,6 +25,7 @@ function writeServiceWorkerFile(rootDir, handleFetch, callback) {
       rootDir + '/**.html',
       rootDir + '/images/**.*',
       rootDir + '/scripts/**.js',
+      rootDit + '/manifest.json'
     ],
     stripPrefix: rootDir + '/',
     verbose: true

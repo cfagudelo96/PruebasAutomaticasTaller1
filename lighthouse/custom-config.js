@@ -1,17 +1,20 @@
 'use strict';
 
 module.exports = {
+
     extends: 'lighthouse:default',
 
     passes: [{
         passName: 'defaultPass',
         gatherers: [
-            'card-gatherer'
+            'card-gatherer',
+            'api-gatherer'
         ]
     }],
 
     audits: [
-        'card-audit'
+        'card-audit',
+        'api-audit'
     ],
 
     categories: {
@@ -19,7 +22,8 @@ module.exports = {
             title: 'Ratp pwa metrics',
             description: 'Metrics for the ratp timetable site',
             auditRefs: [
-                {id: 'card-audit', weight: 1}
+                {id: 'card-audit', weight: 1},
+                {id: 'api-audit', weight: 1}
             ]
         }
     }

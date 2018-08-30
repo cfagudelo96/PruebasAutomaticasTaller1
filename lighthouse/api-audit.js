@@ -2,24 +2,24 @@
 
 const Audit = require('lighthouse').Audit;
 
-const MAX_CARD_TIME = 2000;
+const MAX_API_TIME = 3000;
 
-class LoadAudit extends Audit {
+class ApiLoadAudit extends Audit {
     static get meta() {
         return {
-            id: 'card-audit',
+            id: 'api-audit',
             title: 'Schedule loaded',
             failureTitle: 'Schedule slow to load',
-            description: 'Schedule card initialized and ready',
+            description: 'Schedule api initialized and ready',
 
-            requiredArtifacts: ['TimeToCard']
+            requiredArtifacts: ['TimeToApi']
         };
     }
 
     static audit(artifacts) {
-        const loadedTime = artifacts.TimeToCard;
+        const loadedTime = artifacts.TimeToApi;
 
-        const belowThreshold = loadedTime <= MAX_CARD_TIME;
+        const belowThreshold = loadedTime <= MAX_API_TIME;
 
         return {
             rawValue: loadedTime,
@@ -28,4 +28,4 @@ class LoadAudit extends Audit {
     }
 }
 
-module.exports = LoadAudit;
+module.exports = ApiLoadAudit;

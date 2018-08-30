@@ -23,7 +23,7 @@ class LoadAudit extends Audit {
 
         return {
             rawValue: loadedTime,
-            score: belowThreshold
+            score: Number(belowThreshold)
         };
     }
 }
